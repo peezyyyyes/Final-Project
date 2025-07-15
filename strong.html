@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHRESH SCENTS | STRONG DROP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000 url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+      background-size: cover;
+      font-family: 'Anton', sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: url('https://i.ibb.co/gW0HHDL/chrome-cross-tile.png') repeat;
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #110000;
+      border-bottom: 2px solid #adff2f;
+      box-shadow: 0 0 15px #adff2f33;
+    }
+
+    .nav-logo {
+      font-family: 'UnifrakturCook', cursive;
+      font-size: 2.5rem;
+      color: #adff2f;
+      text-shadow: 0 0 10px #adff2f, 0 0 40px #75ff33;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      color: #adff2f;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      background-color: #adff2f;
+      color: #000;
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+    }
+
+    .logo {
+      font-size: 4.5rem;
+      color: #adff2f;
+      text-shadow: 0 0 15px #adff2f, 0 0 30px #88ff00;
+      animation: flicker 1.5s infinite alternate;
+      font-family: 'UnifrakturCook', cursive;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 1; text-shadow: 0 0 15px #adff2f; }
+      100% { opacity: 0.7; text-shadow: 0 0 30px #75ff33; }
+    }
+
+    .tagline {
+      font-size: 1.5rem;
+      color: #adff2f;
+      margin-top: 0.5rem;
+      text-shadow: 0 0 10px #88ff00cc;
+    }
+
+    main.product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .product-card {
+      flex: 1 1 280px;
+      max-width: 300px;
+      background: linear-gradient(135deg, #1a1a1a, #330033);
+      border-radius: 1.5rem;
+      box-shadow: 0 0 30px #adff2f55, inset 0 0 40px #adff2f33;
+      overflow: hidden;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      transition: transform 0.4s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .product-card:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 50px #adff2f, inset 0 0 60px #adff2f66;
+    }
+
+    .product-image-wrapper {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 20px #adff2f88;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover .product-image {
+      transform: scale(1.1);
+    }
+
+    .product-name {
+      font-size: 1.6rem;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+      color: #adff2f;
+      text-shadow: 0 0 6px #000;
+    }
+
+    .product-description {
+      font-size: 1rem;
+      opacity: 0.9;
+      font-family: sans-serif;
+      margin-bottom: 0.8rem;
+      color: #ccc;
+    }
+
+    .product-price {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #ddff88;
+      text-shadow: 0 0 10px #adff2f;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-logo">PHRESH SCENTS</div>
+    <div class="nav-links">
+      <a href="homepage.html">Home</a>
+      <a href="sweet.html">Sweet</a>
+      <a href="strong.html" class="active">Strong</a>
+      <a href="fun.html">Fun</a>
+      <a href="chill.html">Chill</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1 class="logo">STRONG DROP</h1>
+    <p class="tagline">Bold. Loud. Unstoppable.</p>
+  </header>
+
+  <main class="product-grid">
+    <a href="fierce.html">
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="fierce.png" alt="Fierce scent" class="product-image" />
+        </div>
+        <h3 class="product-name">Fierce</h3>
+        <p class="product-description">Rugged, fresh, and unforgettable.</p>
+        <div class="product-price">$15</div>
+      </article>
+    </a>
+
+    <a href="prada-me.html">
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="Prada-me.png" alt="Prada Me scent" class="product-image" />
+        </div>
+        <h3 class="product-name">Prada Me</h3>
+        <p class="product-description">Sophisticated intensity with wood and spice.</p>
+        <div class="product-price">$15</div>
+      </article>
+    </a>
+
+    <a href="perfect-man.html">
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="perfect-man.png" alt="The Perfect Man scent" class="product-image" />
+        </div>
+        <h3 class="product-name">The Perfect Man</h3>
+        <p class="product-description">Smooth, strong, and timeless with a deep finish.</p>
+        <div class="product-price">$15</div>
+      </article>
+    </a>
+  </main>
+</body>
+</html>

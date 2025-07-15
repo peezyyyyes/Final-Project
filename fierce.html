@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phresh Scents - Fierce</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000 url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+      background-size: cover;
+      font-family: 'Anton', sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+      text-align: center;
+      padding-bottom: 4rem;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: url('https://i.ibb.co/gW0HHDL/chrome-cross-tile.png') repeat;
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    header {
+      padding: 3rem 1rem 2rem;
+    }
+
+    .logo {
+      font-size: 4rem;
+      color: #adff2f;
+      text-shadow: 0 0 15px #adff2f, 0 0 30px #88ff00;
+      animation: flicker 1.5s infinite alternate;
+      font-family: 'UnifrakturCook', cursive;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 1; text-shadow: 0 0 15px #adff2f; }
+      100% { opacity: 0.7; text-shadow: 0 0 30px #75ff33; }
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px #adff2f;
+      color: #adff2f;
+    }
+
+    img {
+      max-width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px #adff2f;
+      margin: 1rem auto;
+      display: block;
+    }
+
+    p {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      margin: 1rem auto;
+      max-width: 600px;
+      color: #eee;
+      opacity: 0.95;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 1.5rem 0;
+      color: #ddff88;
+      text-shadow: 0 0 5px #adff2f;
+    }
+
+    .btn {
+      background-color: #adff2f;
+      color: #000;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 0 25px #adff2f;
+    }
+
+    .btn:hover {
+      background-color: #ccff66;
+      transform: scale(1.05);
+    }
+
+    .nav-links {
+      margin-top: 2rem;
+    }
+
+    .nav-links a {
+      display: inline-block;
+      margin: 0.5rem;
+      color: #adff2f;
+      font-weight: bold;
+      text-decoration: none;
+      border: 2px solid #adff2f;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: #adff2f;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Phresh Scents</div>
+  </header>
+
+  <h1>FIERCE</h1>
+  <img src="fierce.png" alt="Fierce Scent">
+  <p>Clean, masculine, and magnetic — the definition of confidence in a bottle.</p>
+  <div class="price">$15</div>
+
+  <button class="btn" onclick="alert('Fierce has been added to your cart!')">Add to Cart</button>
+
+  <div class="nav-links">
+    <a href="homepage.html">🏠 Home</a>
+    <a href="strong.html">← Back to Strong</a>
+    <a href="contact.html">✉️ Contact</a>
+  </div>
+</body>
+</html>

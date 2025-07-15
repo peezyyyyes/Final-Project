@@ -1,11 +1,9 @@
-# Rewriting the final HTML content to a downloadable file again after kernel reset
-final_html = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PHRESH SCENTS | About</title>
+  <title>PHRESH SCENTS | Shop</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after {
@@ -87,23 +85,54 @@ final_html = """
       letter-spacing: 1px;
     }
 
-    .about-section {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem;
-      background: rgba(255,255,255,0.05);
-      border-radius: 1rem;
-      box-shadow: 0 0 30px #ff00ccaa;
-      font-family: 'Anton', sans-serif;
-      font-size: 1.2rem;
-      line-height: 1.6;
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 2rem;
     }
 
-    .about-section h2 {
-      font-size: 2.5rem;
-      color: #ff00cc;
+    .shop-card {
+      background: #111;
+      border: 2px solid #ff00cc;
+      border-radius: 1rem;
+      box-shadow: 0 0 30px #ff00cc99;
+      text-align: center;
+      padding: 1rem;
+      transition: all 0.4s ease;
+      cursor: pointer;
+    }
+
+    .shop-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 60px #ff00cc;
+    }
+
+    .shop-card img {
+      width: 100%;
+      border-radius: 0.5rem;
       margin-bottom: 1rem;
-      text-shadow: 0 0 10px #fff;
+    }
+
+    .shop-card h3 {
+      font-size: 1.8rem;
+      color: #ff00cc;
+      margin-bottom: 0.5rem;
+    }
+
+    .shop-card p {
+      font-family: 'Anton', sans-serif;
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 0.5rem;
+    }
+
+    .shop-card .price {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #fff;
     }
   </style>
 </head>
@@ -116,32 +145,40 @@ final_html = """
       <a href="strong.html">Strong</a>
       <a href="fun.html">Fun</a>
       <a href="chill.html">Chill</a>
-      <a href="about.html" class="active">About</a>
+      <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
+      <a href="shop.html" class="active">Shop</a>
     </div>
   </nav>
 
-  <h1 class="logo">PHRESH SCENTS</h1>
-  <p class="tagline">Not just a scent. It’s a statement.</p>
+  <h1 class="logo">PHRESH SHOP</h1>
+  <p class="tagline">Pick your drip. Smell like luxury.</p>
 
-  <section class="about-section">
-    <h2>Mission</h2>
-    <p>
-      Phresh Scents crafts fragrance oils, candles & sprays that make every moment unforgettable.
-      It’s been proven that people might forget your face, but never the way you made the air around them smell.
-    </p>
-
-    <h2>Our Story</h2>
-    <p>
-      Born from the energy of street rap, fashion, and exclusivity culture — Phresh Scents isn’t just about smelling good. It’s about standing out.
-      Our blends are inspired by the hottest drops, the rarest grails, and the unapologetic confidence of trap stars and fashion icons alike.
-    </p>
-    <p>
-      Each scent is custom-formulated to hit different — whether it’s soft and sweet or loud and bold, every bottle carries attitude. You’re not just buying fragrance — you’re tapping into a lifestyle.
-    </p>
-    <p>
-      From bold packaging to immersive visuals, we do this for the culture. Welcome to the scent game’s next level. Welcome to Phresh.
-    </p>
+  <section class="shop-grid">
+    <div class="shop-card">
+      <img src="placeholder-sweet.jpg" alt="Sweet Scent">
+      <h3>Sweet</h3>
+      <p>Cotton candy, sugar rush vibes.</p>
+      <div class="price">$15</div>
+    </div>
+    <div class="shop-card">
+      <img src="placeholder-strong.jpg" alt="Strong Scent">
+      <h3>Strong</h3>
+      <p>Bold, spicy, commanding presence.</p>
+      <div class="price">$15</div>
+    </div>
+    <div class="shop-card">
+      <img src="placeholder-fun.jpg" alt="Fun Scent">
+      <h3>Fun</h3>
+      <p>Loud, bright, full of life.</p>
+      <div class="price">$15</div>
+    </div>
+    <div class="shop-card">
+      <img src="placeholder-chill.jpg" alt="Chill Scent">
+      <h3>Chill</h3>
+      <p>Cool, fresh, laid-back energy.</p>
+      <div class="price">$15</div>
+    </div>
   </section>
 </body>
 </html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Phresh Scents | Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Bebas Neue', sans-serif;
+      background: linear-gradient(135deg, #110011, #1a0022, #000000);
+      background-size: 300% 300%;
+      animation: bgShift 10s ease infinite;
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    @keyframes bgShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .login-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid #ffb6ff66;
+      box-shadow: 0 0 25px #ffb6ff66, 0 0 50px #ffa3ff33 inset;
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      width: 90%;
+      max-width: 400px;
+      backdrop-filter: blur(16px);
+      text-align: center;
+      position: relative;
+    }
+
+    .login-box h1 {
+      font-family: 'UnifrakturCook', cursive;
+      font-size: 3rem;
+      color: #ffb6ff;
+      text-shadow: 0 0 10px #ff7bec, 0 0 25px #ffa3ff;
+      margin-bottom: 1.5rem;
+      animation: flicker 2s infinite alternate;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 1; text-shadow: 0 0 20px #ff7bec; }
+      100% { opacity: 0.8; text-shadow: 0 0 40px #ffa3ff; }
+    }
+
+    .login-box input[type="text"],
+    .login-box input[type="password"] {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.7rem 0;
+      background-color: rgba(255, 255, 255, 0.07);
+      border: 1px solid #ffb6ff88;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.3s ease;
+    }
+
+    .login-box input:focus {
+      border-color: #ffb6ff;
+      box-shadow: 0 0 10px #ffb6ff;
+    }
+
+    .login-box button {
+      background: #ffb6ff;
+      color: #000;
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding: 0.8rem 1.5rem;
+      margin-top: 1rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px #ffb6ff;
+    }
+
+    .login-box button:hover {
+      background: #ffa3ff;
+      transform: scale(1.05);
+    }
+
+    .options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .options a {
+      color: #ffb6ff;
+      text-decoration: none;
+    }
+
+    .options a:hover {
+      text-decoration: underline;
+    }
+
+    .glow-circle {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ffb6ff44, transparent 70%);
+      animation: pulse 5s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    .glow-circle.one {
+      top: -100px;
+      left: -100px;
+    }
+
+    .glow-circle.two {
+      bottom: -100px;
+      right: -100px;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.3); opacity: 1; }
+    }
+
+    .back-link {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      font-size: 1rem;
+      text-decoration: none;
+      color: #ffb6ff;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 0.4rem 0.8rem;
+      border-radius: 10px;
+      border: 1px solid #ffb6ff66;
+      transition: 0.3s ease;
+    }
+
+    .back-link:hover {
+      background: #ffb6ff;
+      color: #000;
+      box-shadow: 0 0 10px #ffb6ff;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="homepage.html" class="back-link">← Back to Home</a>
+
+  <div class="glow-circle one"></div>
+  <div class="glow-circle two"></div>
+
+  <div class="login-box">
+    <h1>Phresh Login</h1>
+    <form onsubmit="login(event)">
+      <input type="text" name="uname" placeholder="Username" required />
+      <input type="password" name="psw" placeholder="Password" required />
+      <button type="submit">Login</button>
+      <div class="options">
+        <label><input type="checkbox" checked /> Remember Me</label>
+        <a href="#">Forgot Password?</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function login(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const data = {
+        username: formData.get('uname'),
+        password: formData.get('psw')
+      };
+
+      fetch('http://localhost:9999/login', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+      })
+      .then(response => {
+        if (response.status === 200) {
+          window.location.href = 'homepage.html';
+        } else {
+          return response.text();
+        }
+      })
+      .then(message => {
+        if (message) alert(message);
+      })
+      .catch(error => console.error('Login error:', error));
+    }
+  </script>
+</body>
+</html>

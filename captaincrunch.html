@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phresh Scents - Captain Crunch</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000 url('https://www.transparenttextures.com/patterns/black-paper.png');
+      background-size: cover;
+      font-family: 'Bebas Neue', sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+      text-align: center;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('https://i.ibb.co/gW0HHDL/chrome-cross-tile.png') repeat;
+      opacity: 0.02;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    h1.logo {
+      font-family: 'UnifrakturCook', cursive;
+      font-size: 5rem;
+      text-align: center;
+      margin-top: 3rem;
+      animation: flicker 2s infinite alternate;
+      position: relative;
+      z-index: 2;
+      color: #ffb6ff;
+      text-shadow: 0 0 15px #ff7bec, 0 0 35px #ffa3ff;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 1; text-shadow: 0 0 20px #ff7bec; }
+      100% { opacity: 0.8; text-shadow: 0 0 40px #ffa3ff; }
+    }
+
+    .tagline {
+      text-align: center;
+      font-size: 1.3rem;
+      color: #ccc;
+      margin: 0.5rem 2rem 2rem;
+      text-shadow: 0 0 10px #222;
+      letter-spacing: 1px;
+    }
+
+    .product-section {
+      max-width: 700px;
+      margin: auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 1.5rem;
+      box-shadow: 0 0 35px #ffb6ff55;
+      text-align: center;
+      backdrop-filter: blur(12px);
+    }
+
+    .product-section img {
+      max-width: 100%;
+      border-radius: 1rem;
+      box-shadow: 0 0 25px #ffb6ff88;
+      margin-bottom: 1.5rem;
+    }
+
+    .product-section p {
+      font-size: 1.4rem;
+      color: #fff;
+      margin: 1rem 0;
+      text-shadow: 0 0 10px #000;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ff7bec;
+      margin: 1rem 0;
+      text-shadow: 0 0 15px #ff7bec;
+    }
+
+    .nav-links {
+      margin-top: 2rem;
+    }
+
+    .nav-links a {
+      display: inline-block;
+      margin: 0.5rem;
+      color: #ffb6ff;
+      font-weight: bold;
+      text-decoration: none;
+      border: 2px solid #ffb6ff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background: #ffb6ff;
+      color: #000;
+      box-shadow: 0 0 20px #ffb6ff;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="logo">CAPTAIN CRUNCH</h1>
+  <p class="tagline">Tropical candy clouds with holographic flare.</p>
+
+  <section class="product-section">
+    <img src="captaincrunch.png" alt="Captain Crunch Scent">
+    <p>Bursting with fruity nostalgia, Captain Crunch wraps you in playful joy with bright, tropical sweetness and just a hint of fantasy. Like a Saturday morning in a bottle.</p>
+    <div class="price">$15</div>
+
+    <div class="nav-links">
+      <a href="homepage.html">🏠 Home</a>
+      <a href="fun.html">← Back to Fun</a>
+      <a href="contact.html">✉️ Contact</a>
+    </div>
+  </section>
+</body>
+</html>

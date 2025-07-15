@@ -1,130 +1,95 @@
- /* Reset default margin and padding */
-body, h1, h2, h3, p, ul, li, figure {
-    margin: 0;
-    padding: 0;
-}
-
-/* Body styles */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
-    line-height: 1.6;
-    background-image: url("https://cdn.glitch.global/24891065-d534-4b80-930d-b86faa29d284/par-parsson-ywMwEYTlObQ-unsplash.jpg?v=1720564433017");
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-}
-    
-
-/* Header styles */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-header h1 {
-    font-size: 2rem;
+.products-section {
+    background: radial-gradient(circle at center, #111222, #1b1e3a);
+    padding: 80px 5%;
     text-align: center;
+    color: #aef4ff;
+    min-height: 100vh;
+  }
+  
+  .section-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 3.5rem;
+    color: #00ffe5;
+    text-shadow: 0 0 25px #00fff7;
+    margin-bottom: 60px;
     text-transform: uppercase;
-}
-
-nav ul {
-    list-style-type: none;
-    text-align: center;
-    margin-top: 10px;
-}
-
-nav ul li {
-    display: inline-block;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-}
-
-nav ul li a:hover {
-    color: #c38cf0;
-}
-
-/* Products section styles */
-.products {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.products h2 {
-    font-size: 3rem;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #333;
-}
-
-.product-list {
+  }
+  
+  .product-carousel {
     display: flex;
+    gap: 40px;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
-    
-}
-
-.product {
-    width: 300px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    perspective: 1200px;
+  }
+  
+  .product-card {
+    background: linear-gradient(135deg, #182136, #0a0d1f);
+    border: 3px solid #00ffe5;
+    border-radius: 25px;
+    padding: 20px;
+    width: 240px;
+    color: #b0f7ff;
+    box-shadow: 0 0 20px #00eaff99;
+    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(246, 255, 247, 0.896);
-    overflow: hidden;
-    position: relative;
-    transition: box-shadow 0.9s ease, transform 0.9s ease;
-    
-}
-
-.product:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.product img {
+    transform-style: preserve-3d;
+    cursor: pointer;
+    user-select: none;
+    outline-offset: 4px;
+  }
+  
+  .product-card img {
     width: 100%;
     height: 200px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
-    border-radius: 10px;
-
-}
-
-.product-content {
-    padding: 20px;
-    text-align: left;
-}
-
-.product-content h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.product-content p {
-    font-size: 1.2rem;
-    color: #666;
-    line-height: 1.6;
-}
-
-footer p {
-    margin-bottom: 10px;
-}
+    object-fit: contain;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 6px #00eaffaa);
+    transition: transform 0.3s ease;
+    border-radius: 15px;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.1) rotateY(15deg);
+    box-shadow: 0 0 40px #00eaff, 0 0 20px #00eaffaa inset;
+  }
+  
+  .product-card:hover img {
+    transform: scale(1.1) rotate(3deg);
+  }
+  
+  .product-card.clicked {
+    transform: scale(0.95) rotateY(0deg);
+    box-shadow: 0 0 60px #ff3cf4, 0 0 30px #ff3cf4 inset;
+    transition: transform 0.1s ease;
+  }
+  
+  .product-card h3 {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.5rem;
+    margin: 10px 0 6px;
+    color: #00ffe5;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 15px #00fff7;
+  }
+  
+  .price {
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: #80faff;
+    text-shadow: 0 0 10px #00d9ff;
+  }
+  
+  /* Responsive tweaks */
+  @media (max-width: 768px) {
+    .product-carousel {
+      flex-direction: column;
+      align-items: center;
+    }
+    .product-card {
+      width: 80%;
+      max-width: 300px;
+    }
+  }
+  
